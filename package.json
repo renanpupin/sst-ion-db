@@ -1,0 +1,24 @@
+{
+  "name": "sst-ion-db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sst dev",
+    "db": "sst shell drizzle-kit",
+    "db:studio": "sst shell drizzle-kit studio"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-rds-data": "^3.577.0",
+    "@prisma/client": "^5.14.0",
+    "drizzle-kit": "^0.21.1-674c9c2",
+    "drizzle-orm": "^0.30.10"
+  },
+  "devDependencies": {
+    "prisma": "^5.14.0"
+  }
+}
