@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "@aws-sdk/client-rds-data": "^3.577.0",
+    "@planetscale/database": "^1.18.0",
     "@prisma/client": "^5.14.0",
     "drizzle-kit": "^0.21.1-674c9c2",
     "drizzle-orm": "^0.30.10"

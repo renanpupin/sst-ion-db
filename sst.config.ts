@@ -18,14 +18,10 @@ export default $config({
   async run() {
     preparePrismaLayerFiles();
 
-    // const PrismaLayer = new lambda.LayerVersion(stack, 'PrismaLayer', {
-    //   description: 'Prisma layer',
-    //   code: lambda.Code.fromAsset(path.resolve(prismaLayerPath))
-    // })
-
     const api = new sst.aws.ApiGatewayV2("MyApi");
+
     api.route("GET /", {
-      handler: "index.handler",
+      handler: "index.prismaHandler",
       environment: {
         // You can also use the Config.DATABASE_URL object here
         // or the bind functionality instead of environment props, i.e. bind: [DATABASE_URL],
@@ -38,8 +34,22 @@ export default $config({
           external: ['@prisma/client', '.prisma'],
         },
       },
-      // layers: ''
-      // layers: [PrismaLayer]
+    });
+
+    api.route("GET /drizzle", {
+      handler: "index.drizzleHandler",
+      environment: {
+        // You can also use the Config.DATABASE_URL object here
+        // or the bind functionality instead of environment props, i.e. bind: [DATABASE_URL],
+        DATABASE_URL: process.env.DATABASE_URL!,
+      },
+      nodejs: {
+        format: 'cjs',
+        esbuild: {
+          sourcemap: true,
+          external: ['@prisma/client', '.prisma'],
+        },
+      },
     });
   },
 });

@@ -1,0 +1,13 @@
+{
+  "version": "6",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1716044663194,
+      "tag": "0000_blue_thaddeus_ross",
+      "breakpoints": true
+    }
+  ]
+}
