@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "sst dev",
     "db": "sst shell drizzle-kit",
-    "db:studio": "sst shell drizzle-kit studio"
+    "db:studio": "sst shell drizzle-kit studio",
+    "postinstall": "npx prisma generate"
   },
   "keywords": [],
   "author": "",
